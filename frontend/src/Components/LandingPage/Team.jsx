@@ -28,7 +28,7 @@ const Team = ({ title, members, limit }) => {
           {membersToDisplay.map((member, index) => (
             <motion.div
               key={index}
-              className="w-[230px] h-[320px] flex flex-col items-center bg-white rounded-2xl shadow-md transition-transform transform hover:-translate-y-2 hover:shadow-xl overflow-hidden"
+              className="w-[240px] h-auto flex flex-col items-center bg-white rounded-2xl shadow-md transition-transform transform hover:-translate-y-2 hover:shadow-xl overflow-hidden"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -42,14 +42,14 @@ const Team = ({ title, members, limit }) => {
               />
 
               <div className="flex flex-col items-center p-4 text-center w-full">
-                <div className="flex items-center justify-center gap-3 mb-1">
+                <div className="flex items-center justify-center gap-2 mb-1">
                   <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
                   {member.social && (
                     <a
                       href={member.social}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-teal-600 hover:text-teal-700 transition-colors"
+                      className="text-teal-600 hover:text-teal-700 transition-colors flex-shrink-0"
                       aria-label={`${member.name}'s LinkedIn profile`}
                     >
                       <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">

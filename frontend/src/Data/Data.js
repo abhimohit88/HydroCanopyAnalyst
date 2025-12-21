@@ -47,7 +47,7 @@ const members = [
     title: "Co-Founder & CTO",
     degree: "Ph.D., IIT Kanpur, Environmental Geophysics",
     img: three,
-    social: "https://www.linkedin.com/in/utsav-mishra-phd-08428469/",
+    social: "https://www.linkedin.com/in/dr-utsav-mishra-08428469/",
   },
   {
     name: "Ms. Neha Shukla",
@@ -71,7 +71,7 @@ const advisors = [
     title: "Corporate Finance",
     degree: "IIT Kanpur",
     img: "/Team/Prof-BV-Phani.png",
-    social: "",
+    social: "https://www.linkedin.com/in/phani-bv-46029013/",
   },
   {
     name: "Prof. Tarun Gupta",
@@ -85,7 +85,7 @@ const advisors = [
     title: "Exploration Geophysics",
     degree: "IIT Kanpur",
     img: "/Team/Prof-Animesh-Mandal.png",
-    social: "https://www.linkedin.com/in/animesh-mandal-bb283462/",
+    social: "https://www.linkedin.com/in/animesh-mandal-09361459/",
   },
   {
     name: "Mr. Arks Srinivas",
@@ -93,7 +93,7 @@ const advisors = [
     degree: "MBA (Marketing and Systems), IIM Calcutta",
     img: "/Team/image-2.png",
     social:
-      "https://www.linkedin.com/in/arks-srinivas-akkapeddi-907b2b3/?originalSubdomain=in",
+      "https://www.linkedin.com/in/arks-srinivas-907b2b3/",
   },
 ];
 
@@ -110,14 +110,14 @@ const experts = [
     title: "Director PD&EX management services Structural Engineering",
     degree: "",
     img: "/Team/prabhjot.png",
-    social: "https://www.linkedin.com/in/prabhjot-singh-chugh/",
+    social: "https://www.linkedin.com/in/prabhjot-singh-458982155/",
   },
   {
     name: "Ms. Katyayani Mishra",
     title: "Director & CEO Centre for Policy research and legal initiatives",
     degree: "",
     img: "/Team/katyayani.png",
-    social: "https://www.linkedin.com/in/katyayani-mishra/",
+    social: "",
   },
   {
     name: "Mr. Ramanuj Mitra",
@@ -125,7 +125,7 @@ const experts = [
       "Senior Consultant Sustainability M.S. in Sustainability, Arizona State University",
     degree: "",
     img: "/Team/ramanuj.png",
-    social: "",
+    social: "https://www.linkedin.com/in/ramanuj-mitra-07657570/",
   },
   {
     name: "Dr. Roshan Singh",
