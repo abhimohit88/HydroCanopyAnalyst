@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import WebinarCard from "./WebinarCard";
 import { webinars } from "../../Data/webinars";
 import { FaFilePdf } from "react-icons/fa";
+import SectionHeading from "../../Common/SectionHeading";
 
 // Card animation
 const cardVariants = {
@@ -88,8 +89,8 @@ const WebinarSection = () => {
   const NAVBAR_HEIGHT = 80;
 
   return (
-    <section>
-      {/* Hero Section */}
+    <section className="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 pt-24 pb-12 min-h-screen">
+      {/* Hero Section - Commented Out
       <div
         className="relative text-white overflow-hidden pt-24 sm:pt-32 md:pt-40"
         style={{
@@ -100,10 +101,10 @@ const WebinarSection = () => {
           minHeight: "600px",
         }}
       >
-        {/* Background Overlay */}
+        {/* Background Overlay *\/}
         <div className="absolute inset-0 bg-green-600/40 -z-10" />
 
-        {/* Parallax SVG Layers */}
+        {/* Parallax SVG Layers *\/}
         <motion.div
           style={{ y: layer1Y, top: NAVBAR_HEIGHT }}
           className="absolute left-0 w-full h-full opacity-50 -z-10"
@@ -140,9 +141,9 @@ const WebinarSection = () => {
           </svg>
         </motion.div>
 
-        {/* Content Layer */}
+        {/* Content Layer *\/}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-10 sm:gap-12 relative z-10">
-          {/* Left Text */}
+          {/* Left Text *\/}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -166,7 +167,7 @@ const WebinarSection = () => {
             </motion.button>
           </motion.div>
 
-          {/* Hexagon Grid */}
+          {/* Hexagon Grid *\/}
           <div className="lg:w-3/5 flex justify-center">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
               {illustrations.map((icon, idx) => (
@@ -178,7 +179,7 @@ const WebinarSection = () => {
           </div>
         </div>
 
-        {/* Wave Divider */}
+        {/* Wave Divider *\/}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
           <svg
             className="relative block w-full h-16 sm:h-20 md:h-24"
@@ -191,6 +192,23 @@ const WebinarSection = () => {
               d="M0,192L80,176C160,160,320,128,480,133.3C640,139,800,181,960,197.3C1120,213,1280,203,1360,197.3L1440,192V320H0Z"
             ></path>
           </svg>
+        </div>
+      </div>
+      */}
+
+      {/* Webinar Heading */}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative"
+          >
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <SectionHeading>Webinar</SectionHeading>
+            </div>
+          </motion.div>
         </div>
       </div>
 

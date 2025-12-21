@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const SECTIONS = [
   ["Sustainability Assessment", "& Reporting"],
   ["Sustainable Environmental", "Management"],
-  ["Climate Impact &", "Sustainability Assessment"],
+  ["Climate Risk Intelligence"],
   ["Geophysical", "Investigation"],
   ["Urban Planning", "& Management"],
   ["Training &", "Capacity Building"]

@@ -19,7 +19,7 @@ const data = [
     image: "/offering/4.png",
   },
   {
-    title: "Climate Impact & Sustainability Assessment",
+    title: "Climate Risk Intelligence",
     paragraph:
       "Using AI and analytics to assess risks, model impacts, and guide adaptation strategies.",
     image: "/offering/img4.png",

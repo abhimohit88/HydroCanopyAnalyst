@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { MapPin, ChevronDown, ChevronUp, ExternalLink, Share2, Bookmark, Eye, Award, Target, Zap, Users, Calendar } from 'lucide-react';
 import Logo from "../Components/LandingPage/Logo";
+import Logoscroll from "../Components/LandingPage/Logoscroll";
 import { useLocation } from "react-router-dom";
 
 // ProjectsPage.jsx - Complete Implementation
@@ -93,7 +94,7 @@ const filterOptions = [
   'All Projects',
   'Sustainability Assessment & Reporting',
   'Sustainable Environmental Management',
-  'Climate Impact & Sustainability Assessment',
+  'Climate Risk Intelligence',
   'Geophysical Investigation',
   'Urban Planning & Management',
   'Training & Capacity Building'
@@ -329,7 +330,7 @@ const ProjectsPage = () => {
   const stats = [
     { number: "25", suffix: "+", label: "Projects Completed", icon: Award },
     { number: "15", suffix: "+", label: "Happy Clients", icon: Users },
-    { number: "4", suffix: "+", label: "Years Experience", icon: Calendar },
+    { number: "6", suffix: "+", label: "Years Experience", icon: Calendar },
     { number: "99", suffix: "%", label: "Success Rate", icon: Target }
   ];
 
@@ -409,6 +410,9 @@ const ProjectsPage = () => {
               </div>
             </div>
           </section>
+
+          {/* Company Logos Section */}
+          <Logoscroll />
         </section>
         
         {/* Projects Grid */}

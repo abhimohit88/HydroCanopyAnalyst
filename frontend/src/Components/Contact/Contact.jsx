@@ -128,7 +128,7 @@ export default function Contact() {
 
          
 <div>
-  <label className="block text-sm font-medium mb-1 text-green-800">Interested In</label>
+  <label className="block text-sm font-medium mb-1 text-green-800">What type of support are you looking for?</label>
   <select
     name="interestedIn"
     value={formData.interestedIn}
@@ -137,10 +137,12 @@ export default function Contact() {
     className="w-full pl-3 pr-4 py-3 border border-green-300 rounded-xl bg-green-50 text-green-900 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-200 hover:bg-green-100"
   >
     <option value="" disabled></option>
-    <option value="Services Inquiry">Services Inquiry</option>
-    <option value="Partnership / Collaboration">Partnership / Collaboration</option>
-    <option value="Careers / Work with Us">Careers / Work with Us</option>
-    <option value="Training & Workshops">Training & Workshops</option>
+    <option value="Sustainability Reporting / ESG Support">Sustainability Reporting / ESG Support</option>
+    <option value="Wastewater Treatment & Waterbody Restoration">Wastewater Treatment & Waterbody Restoration</option>
+    <option value="Geophysical / Subsurface Investigation">Geophysical / Subsurface Investigation</option>
+    <option value="Urban Planning & City Project Support">Urban Planning & City Project Support</option>
+    <option value="Climate Risk Assessment / Climate Data Advisory">Climate Risk Assessment / Climate Data Advisory</option>
+    <option value="Training, Workshops, or Capacity Building">Training, Workshops, or Capacity Building</option>
     <option value="General Inquiry">General Inquiry</option>
   </select>
 </div>

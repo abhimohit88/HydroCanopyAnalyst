@@ -158,10 +158,10 @@ export default function Homepage() {
 </h1>
 
 
-              <h2 className="text-lg md:text-xl lg:text-[20px] drop-shadow-2xl font-semibold leading-tight mb-10">
+              {/*<h2 className="text-lg md:text-xl lg:text-[20px] drop-shadow-2xl font-semibold leading-tight mb-10">
                 TRANSFORM <span className="text-[#c39b17]">YOUR BUSINESS WITH </span>
                 <span>SUSTAINABLE INNOVATION</span>
-              </h2>
+              </h2>*/}
 
               <Link to="/contact#form">
                 <motion.button

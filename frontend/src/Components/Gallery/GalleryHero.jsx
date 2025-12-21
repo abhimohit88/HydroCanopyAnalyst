@@ -24,7 +24,6 @@ const GalleryHero = () => {
     { image: "/Demo/31th15.jpeg" },
     { image: "/Demo/31th16.jpeg" },
     { image: "/Demo/31th17.jpeg" },
-    { image: "/Demo/31th18.jpeg" },
     { image: "/Demo/31th19.jpeg" },
     { image: "/Demo/31th20.jpeg" },
     { image: "/Demo/31th21.jpeg" },

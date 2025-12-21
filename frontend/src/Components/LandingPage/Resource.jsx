@@ -13,7 +13,7 @@ const Resource = () => {
       id: "r1",
       title: "Blogs",
       description:
-        "We leverage our internal research capabilities alongside state-of-the-art academic insights to develop new capabilities for our partner clients.",
+        "Insightful perspectives on sustainability, climate risk, water systems, and urban resilience — translated into practical, easy-to-apply ideas.",
       buttonText: "Explore our blogs",
       link: "/resources/blogs",
       image:
@@ -23,8 +23,8 @@ const Resource = () => {
       id: "r2",
       title: "Case Studies",
       description:
-        "We provide detailed case studies on two to three significant advancements shaping the global sustainable finance landscape and its evolution.",
-      buttonText: "Explore case studies",
+        "Real-world projects showcasing how our solutions create measurable environmental, social, and economic impact across sectors.",
+        buttonText: "Explore case studies",
       link: "/resources/casestudies",
       image:
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
@@ -33,7 +33,7 @@ const Resource = () => {
       id: "r3",
       title: "Webinars",
       description:
-        "We host a topical dialogue every month, bringing together an eclectic set of experts on the subject to share their insights with climate finance practitioners.",
+        "Expert-led sessions exploring emerging trends, practical frameworks, and actionable insights in sustainability, climate, and environmental management.",
       buttonText: "Explore webinars",
       link: "/resources/webinar",
       image:

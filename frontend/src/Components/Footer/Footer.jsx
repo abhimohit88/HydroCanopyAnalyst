@@ -38,7 +38,7 @@ const Footer = () => {
     { name: 'About', url: '/about' },
     { name: 'Offerings', url: '/offerings' },
     { name: 'Projects', url: '/projects' },
-    { name: 'Resources', url: '/resources' },
+    { name: 'Resources', url: '/resources/blogs' },
     { name: 'Contact', url: '/contact' },
   ];
 

@@ -3,6 +3,7 @@ import API from "../api/axios";
 import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import ContentCard from "../Common/Content/ContentCard";
+import SectionHeading from "../Common/SectionHeading";
 
 const CaseStudyPage = () => {
     const [caseStudies, setCaseStudies] = useState([]);
@@ -41,15 +42,9 @@ const CaseStudyPage = () => {
                     >
 
                         <div className="flex items-center justify-center gap-4 mb-6">
-                            <Sparkles className="text-emerald-500 animate-pulse" size={32} />
-                            <motion.h1
-                                animate={{ backgroundPositionX: ["0%", "100%", "0%"] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                                className="p-2 text-5xl md:text-7xl font-bold bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-600 bg-[length:200%_100%] bg-clip-text text-transparent drop-shadow-sm"
-                            >
-                                Case Studies
-                            </motion.h1>
-                            <Sparkles className="text-teal-500 animate-pulse" size={32} />
+                            {/*<Sparkles className="text-emerald-500 animate-pulse" size={32} /> */}
+                            <SectionHeading>Case Studies</SectionHeading>
+                            {/*<Sparkles className="text-emerald-500 animate-pulse" size={32} /> */}
                         </div>
 
                         <motion.div
