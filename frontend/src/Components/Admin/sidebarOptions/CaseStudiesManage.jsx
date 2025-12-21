@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import API from "../../../api/axios";
 
 
@@ -67,17 +69,9 @@ export default function CaseStudiesManage() {
         setFormData(prev => ({ ...prev, [name]: files ? files[0] : value }));
     };
 
-    const processContent = (text) => {
-        if (!text) return "";
-        const imageUrlRegex = /(https?:\/\/[^\s]+?\.(?:jpg|jpeg|png|gif|svg|webp))/gi;
-        return text.split('\n').map(line => {
-            if (line.trim().match(imageUrlRegex)?.[0] === line.trim()) {
-                return `<img src="${line.trim()}" alt="Case Study content image" style="max-width: 100%; height: auto; border-radius: 8px; margin: 1em 0;" />`;
-            } else if (line.trim() !== "") {
-                return `<p>${line.trim()}</p>`;
-            }
-            return '';
-        }).join('');
+    const processContent = (html) => {
+        // Content from Quill is already HTML, just return it
+        return html || "";
     };
 
     const handleUpload = async () => {
@@ -145,12 +139,12 @@ export default function CaseStudiesManage() {
 
     const openEditModal = (study) => {
         setSelectedCaseStudy(study);
-        const plainTextContent = study.content
-            .replace(/<img[^>]*>/g, match => `\n${match.match(/src="([^"]*)"/)?.[1] || ''}\n`)
-            .replace(/<\/p>/g, "\n")
-            .replace(/<[^>]*>/g, "")
-            .trim();
-        setFormData({ title: study.title, author: study.author, content: plainTextContent, image: study.image });
+        setFormData({ 
+            title: study.title, 
+            author: study.author, 
+            content: study.content, // Already HTML from Quill
+            image: study.image 
+        });
         setIsEditModalOpen(true);
     };
 
@@ -212,11 +206,33 @@ function Modal({ title, children, onClose, onSubmit, hideSubmit }) {
 
 function ContentForm({ formData, handleChange, contentType }) {
     const removeImage = () => handleChange({ target: { name: "image", value: null, files: null } });
+    
+    const quillModules = {
+        toolbar: [
+            [{ 'header': [1, 2, 3, false] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            ['blockquote', 'code-block'],
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            ['link', 'image'],
+            [{ 'color': [] }, { 'background': [] }],
+            ['clean']
+        ],
+    };
+
+    const quillFormats = [
+        'header',
+        'bold', 'italic', 'underline', 'strike',
+        'blockquote', 'code-block',
+        'list',
+        'link', 'image',
+        'color', 'background'
+    ];
+
     return (
         <form className="space-y-6">
             <div><label className="block text-sm font-medium text-gray-700 mb-1">Title</label><input type="text" name="title" placeholder={`Enter ${contentType} title`} value={formData.title} onChange={handleChange} className="text-black bg-gray-200 w-full border-gray-300 px-4 py-2.5 rounded-lg focus:ring-2 focus:ring-green-500" /></div>
             <div><label className="block text-sm font-medium text-gray-700 mb-1">Author</label><input type="text" name="author" placeholder="Author's name" value={formData.author} onChange={handleChange} className="text-black bg-gray-200 w-full border-gray-300 px-4 py-2.5 rounded-lg focus:ring-2 focus:ring-green-500" /></div>
-            <div><label className="block text-sm font-medium text-gray-700 mb-1">Content</label><textarea name="content" placeholder={`Write your ${contentType} content...`} value={formData.content} onChange={handleChange} rows="8" className="text-black bg-gray-200 w-full border-gray-300 px-4 py-2.5 rounded-lg focus:ring-2 focus:ring-green-500"></textarea></div>
+            <div><label className="block text-sm font-medium text-gray-700 mb-1">Content</label><ReactQuill value={formData.content} onChange={(content) => handleChange({ target: { name: 'content', value: content } })} modules={quillModules} formats={quillFormats} theme="snow" placeholder={`Write your ${contentType} content...`} style={{ height: '300px', marginBottom: '40px' }} /></div>
             <div><label className="block text-sm font-medium text-gray-700 mb-1">{contentType} Image</label>{formData.image ? (<div className="flex items-center gap-3 mt-2"><p className="text-sm text-gray-700 bg-green-100 px-3 py-1 rounded-full">{typeof formData.image === "string" ? formData.image.split("/").pop() : formData.image.name}</p><button type="button" onClick={removeImage} className="text-red-500 font-bold hover:text-red-700 text-xl" title="Remove image">&times;</button></div>) : (<input type="file" name="image" accept="image/*" onChange={handleChange} className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-100 file:text-green-700 hover:file:bg-green-200" />)}</div>
         </form>
     );

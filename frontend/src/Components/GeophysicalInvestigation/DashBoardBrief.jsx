@@ -88,7 +88,7 @@ const EhmBrief = () => {
             >
               <img
                 className="w-full h-full object-cover rounded-2xl shadow-lg"
-                src='/offering/SR.png'
+                src='/offering/Geo_main.png'
                 alt="Aerial view of green terrace farms"
               />
             </motion.div>
