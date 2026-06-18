@@ -19,6 +19,7 @@ const labelR = 195;
 
 export default function OfferingsHero() {
   const specialLabelYOffset = -20;
+  void motion;
   
   const handleNavigate = (section) => {
     console.log(`Navigating to: ${section}`);

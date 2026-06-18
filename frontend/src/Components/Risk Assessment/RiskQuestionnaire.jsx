@@ -30,6 +30,7 @@ const RiskQuestionnaire = () => {
 
   const [activeQuery, setActiveQuery] = useState(sections[0].queries[0]);
   const [answers, setAnswers] = useState({});
+  void motion;
 
   const handleAnswer = (queryId, answer) => {
     setAnswers((prev) => ({ ...prev, [queryId]: answer }));

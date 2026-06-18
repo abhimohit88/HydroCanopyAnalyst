@@ -49,6 +49,7 @@ const OfferingsHero = () => {
   const showInnerCircle = width >= 750;
   const [isMounted, setIsMounted] = useState(false);
   const mountedRef = useRef(false);
+  void motion;
 
   useEffect(() => {
     // protect against double mounting in StrictMode

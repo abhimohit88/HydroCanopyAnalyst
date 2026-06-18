@@ -9,6 +9,7 @@ const CaseStudyPage = () => {
     const [caseStudies, setCaseStudies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    void motion;
 
     useEffect(() => {
         const fetchCaseStudies = async () => {
@@ -20,7 +21,7 @@ const CaseStudyPage = () => {
                 } else {
                     throw new Error(response.data.message || "Failed to fetch case studies");
                 }
-            } catch (err) {
+            } catch {
                 setError("Failed to load case studies. Please try again later.");
             } finally {
                 setLoading(false);

@@ -80,6 +80,7 @@ const features = [
 
 const DashboardFeaturesBento = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  void hoveredIndex;
 
   return (
     <section className="relative py-24 px-6 overflow-hidden">

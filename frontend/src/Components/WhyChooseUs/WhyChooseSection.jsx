@@ -13,6 +13,7 @@ export const WhyChooseSection = ({
   defaultSelected = "curated"
 }) => {
   const [selectedOption, setSelectedOption] = useState(defaultSelected);
+  void motion;
   const selectedChoice = options.find(option => option.id === selectedOption) || options[0];
 
   return (

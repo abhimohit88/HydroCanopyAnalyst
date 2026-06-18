@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { Sparkles } from 'lucide-react';
 
 export const Title = ({title , component}) =>{

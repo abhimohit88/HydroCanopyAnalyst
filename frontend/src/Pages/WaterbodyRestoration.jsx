@@ -8,6 +8,7 @@ const WaterbodyRestoration = () => {
     const [activeNode, setActiveNode] = useState(null);
     const [hoveredStage, setHoveredStage] = useState(null);
     const [hoveredProject, setHoveredProject] = useState('laxmi');
+    void motion;
 
     const factors = [
         { id: 'f1', name: 'Storm water drain', image: 'https://res.cloudinary.com/dlpluej6w/image/upload/v1759495219/storm_water_pypduf.png' },
@@ -256,18 +257,22 @@ const WaterbodyRestoration = () => {
                         <motion.div className="flex flex-col items-center lg:w-[350px]">
                             <h3 className={headingStyle}>Impacts</h3>
                             <div className="flex flex-col gap-6 w-full px-4 lg:px-0">
-                                {impacts.map(({ id, name, IconComponent }) => (
-                                    <div
-                                        key={id}
-                                        onMouseEnter={() => setActiveNode(id)}
-                                        onMouseLeave={() => setActiveNode(null)}
-                                        className={`flex items-center w-full gap-4 p-4 rounded-xl bg-[#ffffff88] shadow-md transition-all duration-300 ease-in-out cursor-pointer group hover:shadow-xl hover:-translate-y-1 hover:bg-slate-50 ${activeNode === id ? 'ring-2 ring-[#10b981] shadow-lg' : 'ring-1 ring-gray-200'}`}>
-                                        <div className={`flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full transition-colors duration-300 ${activeNode === id ? 'bg-[#10b98118]' : 'bg-gray-100 group-hover:bg-red-50'}`}>
-                                            <IconComponent className={`w-6 h-6 transition-colors duration-300 ${activeNode === id ? 'text-[#10b981]' : 'text-gray-600'}`} />
+                                {impacts.map(({ id, name, IconComponent }) => {
+                                    void IconComponent;
+
+                                    return (
+                                        <div
+                                            key={id}
+                                            onMouseEnter={() => setActiveNode(id)}
+                                            onMouseLeave={() => setActiveNode(null)}
+                                            className={`flex items-center w-full gap-4 p-4 rounded-xl bg-[#ffffff88] shadow-md transition-all duration-300 ease-in-out cursor-pointer group hover:shadow-xl hover:-translate-y-1 hover:bg-slate-50 ${activeNode === id ? 'ring-2 ring-[#10b981] shadow-lg' : 'ring-1 ring-gray-200'}`}>
+                                            <div className={`flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full transition-colors duration-300 ${activeNode === id ? 'bg-[#10b98118]' : 'bg-gray-100 group-hover:bg-red-50'}`}>
+                                                <IconComponent className={`w-6 h-6 transition-colors duration-300 ${activeNode === id ? 'text-[#10b981]' : 'text-gray-600'}`} />
+                                            </div>
+                                            <p className="font-semibold text-gray-800 text-left leading-tight">{name}</p>
                                         </div>
-                                        <p className="font-semibold text-gray-800 text-left leading-tight">{name}</p>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                             </div>
                         </motion.div>
                     </ScrollRevealElements>

@@ -56,6 +56,8 @@ const ScrollRevealElements = ({ children, className, staggerAmount }) => {
 };
 
 export default function ImplementationPlanSection() {
+  void motion;
+
   return (
     <section className="relative py-20 px-6 overflow-hidden">
       {/* Gradient background with fade to white */}

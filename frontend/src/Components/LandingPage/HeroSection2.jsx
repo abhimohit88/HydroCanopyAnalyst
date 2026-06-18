@@ -75,17 +75,12 @@ export default function Homepage() {
       `}</style>
       
       <div className="relative min-h-screen text-white overflow-hidden">
-        {/* Background Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
+        {/* Background Image */}
+        <img
+          src="/CommonImages/background_Image.png"
+          alt="Background"
           className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="/HeroPage_img/video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        />
 
         {/* Optional Overlay for Tint (to blend with eco-theme) */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-black/40 to-black/50 z-5"></div>

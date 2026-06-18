@@ -33,7 +33,7 @@ const EhmBrief = () => {
         <div className="absolute bottom-0 left-0 w-full h-[70%] bg-gradient-to-t from-[#ededed]" /> */}
 
         {/* Top Section Content */}
-        <SectionHeading>About EHM</SectionHeading>
+        <SectionHeading>About Hydro Canopy Analyst Pvt. Ltd</SectionHeading>
         {/* <ScrollRevealElements
           className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6"
           staggerAmount={0.5}
@@ -103,10 +103,8 @@ const EhmBrief = () => {
                 
               </motion.h3>
               <motion.p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base md:text-base lg:text-lg">
-                EHM is a sustainability-focused startup founded by IIT alumni, 
-                working to advance the United Nations Sustainable Development Goals (SDGs). 
-                We partner with industries, government organizations, and higher education institutions 
-                to enhance ESG performance, manage climate risks, meet regulatory standards, and implement long-term sustainability strategies.
+                Hydro Canopy Analyst Pvt. Ltd. is a specialized water intelligence, climate resilience, and sustainability advisory firm dedicated to helping organizations navigate complex environmental and water-related challenges. By combining expertise in hydrology, hydrogeology, climate risk, ESG, geospatial analytics, and sustainability strategy, the company delivers actionable insights that support resilient decision-making, resource sustainability, regulatory compliance, and long-term value creation. Serving clients across government, industry, finance, and development sectors globally, Hydro Canopy Analyst empowers organizations to build water-secure, climate-resilient, and sustainable futures.
+
                 <br />
                 <br />
 

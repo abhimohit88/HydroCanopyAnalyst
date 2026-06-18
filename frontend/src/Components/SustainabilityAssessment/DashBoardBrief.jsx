@@ -4,6 +4,8 @@ import ScrollRevealElements from '../Animations/ScrollRevealElements';
 import SectionHeading from '../../Common/SectionHeading';
 
 const EhmBrief = () => {
+  void motion;
+
   return (
     <section className="relative font-sans overflow-hidden">
       {/* Multiple layered gradients for deep fading effect */}

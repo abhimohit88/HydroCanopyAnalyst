@@ -9,6 +9,7 @@ const BlogsPage = () => {
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    void motion;
 
     useEffect(() => {
         const fetchBlogs = async () => {
@@ -20,7 +21,7 @@ const BlogsPage = () => {
                 } else {
                     throw new Error(response.data.message || "Failed to fetch blogs");
                 }
-            } catch (err) {
+            } catch {
                 setError("Failed to load blogs. Please try again later.");
             } finally {
                 setLoading(false);

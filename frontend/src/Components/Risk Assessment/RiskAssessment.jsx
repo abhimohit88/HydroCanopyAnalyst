@@ -15,6 +15,8 @@ const floatAnimation = {
 };
 
 const RiskAssessment = () => {
+  void motion;
+
   return (
     <section className="relative bg-[#f5f6f5] text-gray-900 py-16 overflow-hidden">
 

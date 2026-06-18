@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const OfferingsSection = () => {
   const navigate = useNavigate();
   const [hoveredCard, setHoveredCard] = useState(null);
+  void hoveredCard;
 
   const offerings = [
     {

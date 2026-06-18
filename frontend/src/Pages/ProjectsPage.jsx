@@ -179,27 +179,10 @@ const ProjectCard = ({
   onClick
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
 
   const toggleExpanded = (e) => {
     e.stopPropagation();
     setIsExpanded(!isExpanded);
-  };
-
-  const handleBookmark = (e) => {
-    e.stopPropagation();
-    setIsBookmarked(!isBookmarked);
-  };
-
-  const handleShare = (e) => {
-    e.stopPropagation();
-    const dummyInput = document.createElement('input');
-    document.body.appendChild(dummyInput);
-    dummyInput.value = window.location.href;
-    dummyInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(dummyInput);
-    console.log('Link copied to clipboard!');
   };
 
   const locationcard = useLocation();
@@ -247,14 +230,6 @@ const ProjectCard = ({
             </span>
           </div>
         )}
-        <div className="absolute top-3 left-1/2 transform -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-          {/* <button onClick={handleBookmark} aria-label="Bookmark project" className={`p-2 rounded-full backdrop-blur-md transition-all duration-300 hover:scale-110 ${isBookmarked ? 'bg-yellow-100/90 text-yellow-600 border border-yellow-200' : 'bg-white/90 text-gray-600 border border-gray-200 hover:bg-yellow-100/90 hover:text-yellow-600'}`}>
-            <Bookmark className="w-4 h-4" fill={isBookmarked ? "currentColor" : "none"} />
-          </button>
-          <button onClick={handleShare} aria-label="Share project" className="p-2 rounded-full bg-white/90 text-gray-600 border border-gray-200 backdrop-blur-md hover:bg-teal-100/90 hover:text-teal-600 transition-all duration-300 hover:scale-110">
-            <Share2 className="w-4 h-4" />
-          </button> */}
-        </div>
         <div className="absolute bottom-0 left-0 right-0 p-4">
           <h3 className="text-xl md:text-xl font-bold text-white mb-1 drop-shadow-lg leading-tight">{title}</h3>
           {location && <div className="flex items-center text-white/90 text-xs"><MapPin className="w-3 h-3 mr-1" />{location}</div>}
@@ -312,7 +287,6 @@ const ProjectCard = ({
 // =============================================================================
 
 const ProjectsPage = () => {
-  const [message, setMessage] = useState(null);
   const [activeFilter, setActiveFilter] = useState('All Projects');
 
   const filteredProjects = useMemo(() => {
@@ -321,11 +295,6 @@ const ProjectsPage = () => {
     }
     return sampleProjects.filter(project => project.projectType === activeFilter);
   }, [activeFilter]);
-
-  const showMessage = (msg) => {
-    setMessage(msg);
-    setTimeout(() => setMessage(null), 3000);
-  };
 
   const stats = [
     { number: "25", suffix: "+", label: "Projects Completed", icon: Award },
@@ -398,15 +367,19 @@ const ProjectsPage = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-white/20 backdrop-blur-sm rounded-3xl"></div>
               <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                {stats.map(({ number, suffix, label, icon: Icon }, index) => (
-                  <div key={index} className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center group">
-                    <Icon className="w-8 h-8 text-teal-600 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="text-3xl font-bold text-teal-600 mb-1">
-                      <AnimatedCounter end={number} suffix={suffix} />
+                {stats.map((stat, index) => {
+                  const Icon = stat.icon;
+
+                  return (
+                    <div key={index} className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center group">
+                      <Icon className="w-8 h-8 text-teal-600 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
+                      <div className="text-3xl font-bold text-teal-600 mb-1">
+                        <AnimatedCounter end={stat.number} suffix={stat.suffix} />
+                      </div>
+                      <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
                     </div>
-                    <div className="text-sm text-gray-600 font-medium">{label}</div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -438,14 +411,6 @@ const ProjectsPage = () => {
           </div>
         </section>
       </main>
-      
-      {/* Toast Message */}
-      {message && (
-        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fadeIn">
-          {message}
-        </div>
-      )}
-
       
     </div>
   );
