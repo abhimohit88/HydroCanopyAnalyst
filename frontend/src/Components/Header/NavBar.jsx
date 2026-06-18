@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,9 +8,16 @@ const NavBar = () => {
     setIsMenuOpen(false);
   };
 
+  const navLinkClass = ({ isActive }) =>
+    `rounded-full px-5 py-2 text-sm font-semibold tracking-wide transition ${
+      isActive
+        ? "bg-sky-900 text-white shadow-md"
+        : "border border-sky-200 text-sky-900 hover:bg-sky-900 hover:text-white"
+    }`;
+
     return (
-      <header className="fixed top-0 left-0 w-full z-50">
-        <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+      <header className="fixed top-0 left-0 w-full z-50 border-b border-sky-100 bg-white shadow-md">
+        <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-3">
 
           {/* Logo */}
           <Link to="/" onClick={handleNavClick}>
@@ -27,25 +34,25 @@ const NavBar = () => {
           {/* Desktop Menu */}
           <ul className="hidden lg:flex items-center gap-3 font-medium">
             <li>
-              <Link to="/" className="rounded-full bg-sky-900/90 px-5 py-2 text-sm tracking-wide text-white transition hover:bg-sky-800">
+              <NavLink to="/" className={navLinkClass}>
                 HOME
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/about" className="rounded-full border border-sky-900 px-5 py-2 text-sm tracking-wide text-sky-900 transition hover:bg-sky-900 hover:text-white">
+              <NavLink to="/about" className={navLinkClass}>
                 ABOUT
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/contact" className="rounded-full border border-sky-900 px-5 py-2 text-sm tracking-wide text-sky-900 transition hover:bg-sky-900 hover:text-white">
+              <NavLink to="/contact" className={navLinkClass}>
                 CONTACT
-              </Link>
+              </NavLink>
             </li>
           </ul>
 
         {/* Mobile Menu Toggle */}
         <div
-          className="lg:hidden text-sky-900 text-3xl cursor-pointer"
+          className="lg:hidden rounded-xl border border-sky-200 bg-white px-3 py-1 text-sky-900 text-3xl shadow-sm cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span>{isMenuOpen ? "✕" : "☰"}</span>
@@ -54,7 +61,7 @@ const NavBar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden mx-6 rounded-2xl border border-sky-100 bg-white/95 px-6 py-4 space-y-4 shadow-lg animate-fadeIn">
+        <div className="lg:hidden mx-6 mb-4 rounded-2xl border border-sky-100 bg-white/95 px-6 py-4 space-y-4 shadow-lg animate-fadeIn">
           <Link
             to="/"
             onClick={handleNavClick}
