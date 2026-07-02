@@ -22,7 +22,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <ScrollToHashElement />
+      <ScrollToHashElement />
       <Layout>
         <ScrollToTop />
         <Routes>

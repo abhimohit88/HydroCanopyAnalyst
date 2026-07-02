@@ -48,6 +48,8 @@ export default function Contact() {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const toEmail =
+      import.meta.env.VITE_CONTACT_TO_EMAIL || "suneelkj@hydrocanopyanalyst.com";
 
     if (!serviceId || !templateId || !publicKey) {
       setIsLoading(false);
@@ -60,7 +62,7 @@ export default function Contact() {
         serviceId,
         templateId,
         {
-          to_email: "abhimohitdixit88@gmail.com",
+          to_email: toEmail,
           from_name: formData.name.trim(),
           from_email: formData.email.trim(),
           company: formData.company.trim() || "Not provided",

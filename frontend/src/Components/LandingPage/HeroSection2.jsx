@@ -75,11 +75,15 @@ export default function Homepage() {
       `}</style>
       
       <div className="relative min-h-screen text-white overflow-hidden">
-        {/* Background Image */}
-        <img
-          src="/CommonImages/background_Image.png"
-          alt="Background"
+        {/* Background Video */}
+        <video
+          src="/CommonImages/Hydro Canopy Analyst Pvt. Ltd.mp4"
           className="absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
         />
 
         {/* Optional Overlay for Tint (to blend with eco-theme) */}
@@ -144,12 +148,12 @@ export default function Homepage() {
         "linear-gradient(90deg, #6b4f28 0%, #0ea5e9 40%, #38bdf8 65%, #fbbf24 100%)"
     }}
   >
-    Sustainability
+    Securing Water
   </span>
   <br />
-  Through Eco-Centric
-  <br />
-  Approach
+  Strengthening Resilience Creating Sustainable Value.
+ {/* <br />
+  Approach*/}
 </h1>
 
 

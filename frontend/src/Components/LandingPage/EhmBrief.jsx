@@ -89,7 +89,7 @@ const EhmBrief = () => {
             >
               <img
                 className="w-full h-full object-cover rounded-2xl shadow-lg"
-                src="https://res.cloudinary.com/dlpluej6w/image/upload/v1756388167/Screenshot_1st_u2ghdl.png"
+                src="/CommonImages/AboutHydro.png"
                 alt="Aerial view of green terrace farms"
               />
             </motion.div>
@@ -103,8 +103,7 @@ const EhmBrief = () => {
                 
               </motion.h3>
               <motion.p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base md:text-base lg:text-lg">
-                Hydro Canopy Analyst Pvt. Ltd. is a specialized water intelligence, climate resilience, and sustainability advisory firm dedicated to helping organizations navigate complex environmental and water-related challenges. By combining expertise in hydrology, hydrogeology, climate risk, ESG, geospatial analytics, and sustainability strategy, the company delivers actionable insights that support resilient decision-making, resource sustainability, regulatory compliance, and long-term value creation. Serving clients across government, industry, finance, and development sectors globally, Hydro Canopy Analyst empowers organizations to build water-secure, climate-resilient, and sustainable futures.
-
+                Hydro Canopy Analyst Pvt. Ltd. is a specialized water intelligence, climate risk, and sustainability advisory firm that helps businesses, industries, investors, and institutions manage water-related risks, strengthen operational resilience, and support sustainable growth. By integrating hydrogeology, hydrology, climate analytics, remote sensing, GIS, and geospatial intelligence, we deliver practical, science-based solutions for groundwater management, water security, flood and drought risk, mine water management, water stewardship, and sustainability strategy. We believe water is not just an environmental resource but a critical business asset that influences operations, supply chains, compliance, investment decisions, infrastructure resilience, and long-term value creation. Our approach combines technical excellence with strategic business insight to help organizations make informed decisions, reduce risk, improve resource efficiency, and build resilience in an increasingly climate- and water-constrained world.
                 <br />
                 <br />
 

@@ -23,7 +23,7 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Linkedin, url: 'https://www.linkedin.com/company/ehm-consultancy-pvt-ltd/', label: 'LinkedIn' },
+    { icon: Linkedin, url: 'https://www.linkedin.com/company/135114658/admin/page-posts/published/', label: 'LinkedIn' },
     { icon: Twitter, url: 'https://x.com/EHMOfficial1', label: 'Twitter' },
     { icon: Instagram, url: 'https://www.instagram.com/ehmofficial1/', label: 'Instagram' },
     { icon: Facebook, url: 'https://www.facebook.com/profile.php?id=100063877967113', label: 'Facebook' },
@@ -32,6 +32,7 @@ const Footer = () => {
 
   const navLinks = [
     { name: 'Home', url: '/' },
+    { name: 'About', url: '/about' },
     { name: 'Contact', url: '/contact' },
   ];
 

@@ -24,21 +24,21 @@ const pillars = [
     solutions: [
       {
         icon: Droplets,
-        title: "Water Security & Resource Sustainability",
+        title: "Water Intelligence and Risk Advisory",
         paragraph:
-          "Science-based assessment of supply, demand, and watershed health to secure long-term water availability across operations and regions.",
+          "Helping organizations understand, quantify, and manage water-related risks that influence operations, investments, infrastructure, and sustainable growth.",
       },
       {
         icon: CloudRain,
-        title: "Climate Resilience & Adaptation Planning",
+        title: "Dewatering and Groundwater Management",
         paragraph:
-          "Anticipate climate-driven risks and design robust adaptation strategies that protect people, assets, and ecosystems.",
+          "Providing specialized hydrogeological solutions for infrastructure, mining, industrial, and construction projects where groundwater management is critical for project success, environmental compliance, and operational safety.",
       },
       {
         icon: Waves,
-        title: "Urban Resilience & Flood Risk Management",
+        title: "Climate Resilience and Adaptation",
         paragraph:
-          "Flood modeling, stormwater planning, and resilient infrastructure that reduce urban vulnerability and strengthen cities.",
+          "Supporting governments, cities, and businesses in understanding climate risks and building adaptive capacity for future uncertainties.",
       },
     ],
   },
