@@ -8,8 +8,6 @@ import {
   Send,
   User,
 } from "lucide-react";
-import emailjs from "@emailjs/browser";
-
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -45,24 +43,18 @@ export default function Contact() {
     setIsLoading(true);
     setErrorMsg("");
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-    const toEmail =
-      import.meta.env.VITE_CONTACT_TO_EMAIL || "suneelkj@hydrocanopyanalyst.com";
+    const googleSheetsEndpoint = import.meta.env.VITE_GOOGLE_SHEETS_WEB_APP_URL;
 
-    if (!serviceId || !templateId || !publicKey) {
+    if (!googleSheetsEndpoint) {
       setIsLoading(false);
-      setErrorMsg("Email service is not configured yet. Please contact support.");
+      setErrorMsg("Contact form service is not configured. Please contact support.");
       return;
     }
 
     try {
-      const templateParams = {
-        to_email: toEmail,
+      const payload = {
         from_name: formData.name.trim(),
         from_email: formData.email.trim(),
-        reply_to: formData.email.trim(),
         company: formData.company.trim() || "Not provided",
         mobile: formData.mobile.trim() || "Not provided",
         phone: formData.mobile.trim() || "Not provided",
@@ -72,12 +64,13 @@ export default function Contact() {
         submitted_at: new Date().toLocaleString(),
       };
 
-      await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        { publicKey }
-      );
+      const queryString = new URLSearchParams(payload).toString();
+      const url = `${googleSheetsEndpoint}?${queryString}`;
+
+      await fetch(url, {
+        method: "GET",
+        mode: "no-cors",
+      });
 
       setIsSubmitted(true);
       setFormData({
