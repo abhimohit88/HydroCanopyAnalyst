@@ -58,19 +58,24 @@ export default function Contact() {
     }
 
     try {
+      const templateParams = {
+        to_email: toEmail,
+        from_name: formData.name.trim(),
+        from_email: formData.email.trim(),
+        reply_to: formData.email.trim(),
+        company: formData.company.trim() || "Not provided",
+        mobile: formData.mobile.trim() || "Not provided",
+        phone: formData.mobile.trim() || "Not provided",
+        role: formData.role.trim() || "Not provided",
+        interested_in: formData.interestedIn,
+        message: formData.message.trim(),
+        submitted_at: new Date().toLocaleString(),
+      };
+
       await emailjs.send(
         serviceId,
         templateId,
-        {
-          to_email: toEmail,
-          from_name: formData.name.trim(),
-          from_email: formData.email.trim(),
-          company: formData.company.trim() || "Not provided",
-          phone: formData.mobile.trim() || "Not provided",
-          role: formData.role.trim() || "Not provided",
-          interested_in: formData.interestedIn,
-          message: formData.message.trim(),
-        },
+        templateParams,
         { publicKey }
       );
 
