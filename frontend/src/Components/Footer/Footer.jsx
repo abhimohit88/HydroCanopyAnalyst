@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Mail, Phone, Linkedin, Twitter, Instagram, Youtube, Facebook, Send } from 'lucide-react';
+import { MapPin, Mail, Phone, Linkedin, Send } from 'lucide-react';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -24,10 +24,6 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Linkedin, url: 'https://www.linkedin.com/company/135114658/admin/page-posts/published/', label: 'LinkedIn' },
-    { icon: Twitter, url: 'https://x.com/EHMOfficial1', label: 'Twitter' },
-    { icon: Instagram, url: 'https://www.instagram.com/ehmofficial1/', label: 'Instagram' },
-    { icon: Facebook, url: 'https://www.facebook.com/profile.php?id=100063877967113', label: 'Facebook' },
-    { icon: Youtube, url: 'https://www.youtube.com/@EHMOfficial1', label: 'YouTube' },
   ];
 
   const navLinks = [
